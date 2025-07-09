@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wedding Cakes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f8f8f8;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .brand {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #b07c7c;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #b07c7c;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: pink;
+      padding: 10px 20px;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 999;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-menu a {
+      margin: 10px 0;
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #555;
+    }
+
+    .gallery, .description-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery img, .description-section img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover, .description-section img:hover {
+      transform: scale(1.05);
+    }
+
+    .description-section {
+      align-items: center;
+    }
+
+    .description-text {
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    ul {
+      list-style-type: circle;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .description-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .gallery img, .description-section img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="brand">HotPlate Bakers & Caterers</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="events.html">Events</a>
+        <a href="birthdays.html">Birthdays</a>
+        <a href="about_us.html">About Us</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="events.html">Events</a>
+      <a href="birthdays.html">Birthdays</a>
+      <a href="about_us.html">About Us</a>
+    </div>
+  </header>
+
+  <h3>Wedding Cakes</h3>
+
+  <section class="gallery">
+    <div>
+      <img src="images/wedding1.jpg" alt="Romantic Rosette Wedding Cake" />
+    </div>
+    <div>
+      <img src="images/wedding2.jpg" alt="Elegant Floral-Topped Wedding Cake" />
+    </div>
+    <div>
+      <img src="images/wed3.jpg" alt="Classic Ivory Tiered Wedding Cake" />
+    </div>
+    <div>
+      <img src="images/wed.jpg" alt="Chic Minimalist Wedding Cake" />
+    </div>
+  </section>
+
+  <section class="description-section">
+    <img src="images/wedding3.jpg" alt="Luxury Garden-Inspired Wedding Cake" />
+    <div class="description-text">
+      <p>
+        This cake is nothing short of a masterpiece, crafted with the finest ingredients and a touch of elegance that makes it truly unforgettable.
+        Its delicate layers, perfectly balanced flavors, and stunning design are a testament to the skill and passion poured into every detail.
+        Each bite is a sweet moment to cherish, blending rich textures and subtle sweetness that leave a lasting impression on the taste buds.
+        More than just a dessert, this cake is the heart of your celebration — a symbol of love, joy, and the beautiful journey ahead.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <h4>Stay Connected</h4>
+    <a href="https://www.facebook.com/share/1DMbrAYyYL/" target="_blank">
+      <img src="images/fb.png" alt="Facebook" />
+    </a>
+    <p>Or you could reach us through our contacts:</p>
+    <ul>
+      <li><strong>Nelly:</strong> 0724853269</li>
+    </ul>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    window.addEventListener('resize', () => {
+      const menu = document.getElementById('mobileMenu');
+      if (window.innerWidth > 768) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

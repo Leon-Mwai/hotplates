@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Cakes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f2;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #f8d7da;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #000;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #ffc0cb;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    .card-header {
+      background-color: #ffdde1;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .footer {
+      background-color: #f8d7da;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .footer a {
+      color: #c2185b;
+      text-decoration: underline;
+    }
+
+    .footer a:hover {
+      color: #ad1457;
+    }
+
+    .footer img {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="./index.html"><b>HotPlate Bakers</b></a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="./index.html">Home</a>
+      <a href="./weddings.html">Weddings</a>
+      <a href="./events.html">Events</a>
+      <a href="./birthdays.html">Birthdays</a>
+      <a href="./about_us.html">About Us</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Celebrate With Sweetness 🎂</h1>
+    <p>Our birthday cakes are baked with love and designed to wow.</p>
+  </section>
+
+  <section class="gallery">
+    <div class="card">
+      <div class="card-header">Midnight Cocoa Bliss</div>
+      <img src="./images/chocolate_cake.jpg" alt="Rich chocolate cake with cocoa layers">
+    </div>
+    <div class="card">
+      <div class="card-header">Frosted Blueberry Dream</div>
+      <img src="./images/blueberry_cake.jpg" alt="Blueberry cake topped with frosting">
+    </div>
+    <div class="card">
+      <div class="card-header">Triple Tier Fantasy</div>
+      <img src="./images/multilayer.jpg" alt="Three-layer celebration cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Vanilla Confetti Burst</div>
+      <img src="./images/birthday2.jpg" alt="Vanilla cake with colorful sprinkles">
+    </div>
+    <div class="card">
+      <div class="card-header">Rainbow Surprise Delight</div>
+      <img src="./images/birthday3.jpg" alt="Rainbow layer birthday cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Mocha Swirl Celebration</div>
+      <img src="./images/birthday5.jpg" alt="Mocha cake with swirl topping">
+    </div>
+    <div class="card">
+      <div class="card-header">Spidey Web Treat</div>
+      <img src="./images/birthday6.jpg" alt="Spiderman themed birthday cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Princess Mint Glow</div>
+      <img src="./images/birthday7.jpg" alt="Green princess cake with pop designs">
+    </div>
+    <div class="card">
+      <div class="card-header">Golden Luxe Layers</div>
+      <img src="./images/birthday8.jpg" alt="Golden sparkle celebration cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Velvet Ruby Romance</div>
+      <img src="./images/birthday9.jpg" alt="Red velvet luxury cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Cherry Vanilla Bomb</div>
+      <img src="./images/birthday10.jpg" alt="Vanilla cake with cherries">
+    </div>
+    <div class="card">
+      <div class="card-header">Graduation Royale</div>
+      <img src="./images/corporate4.jpg" alt="Caramel drizzle crown cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Ice Cream Avalanche</div>
+      <img src="./images/birthday12.jpg" alt="Cake with ice cream theme design">
+    </div>
+    <div class="card">
+      <div class="card-header">sprinkles Overload</div>
+      <img src="./images/birthday13.jpg" alt="Oreo themed cream cake tower">
+    </div>
+    <div class="card">
+      <div class="card-header">Galaxy Swirl Cake</div>
+      <img src="./images/Liam.jpg" alt="Galaxy swirl cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Frosty Fantasy</div>
+      <img src="./images/Snow.jpg" alt="Snowy frosted cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Corporate Bliss Tier</div>
+      <img src="./images/corporate5.jpg" alt="Corporate event style cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Berry Bloom Layers</div>
+      <img src="./images/custom1.jpg" alt="Berry-themed layered cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Sunset Peach Swirl</div>
+      <img src="./images/custom2.jpg" alt="Peach and pink birthday cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Oreo Swag</div>
+      <img src="./images/deva-williamson-rHz-DkDgA1k-unsplash.jpg" alt="Strawberry swirled birthday cake">
+    </div>
+    <div class="card">
+      <div class="card-header">Mystic Glaze Cake</div>
+      <img src="./images/oni.jpg" alt="Mystic-themed birthday cake">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <h4>Stay Connected</h4>
+    <a href="https://www.facebook.com/share/1DMbrAYyYL/" target="_blank">
+      <img src="./images/fb.png" alt="Facebook" />
+    </a>
+    <p>Or you could reach us through our contacts:</p>
+    <ul>
+      <li><strong>Nelly:</strong> 0724853269</li>
+    </ul>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

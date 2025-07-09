@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #e63946;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #e63946;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: pink;
+      padding: 10px 20px;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      margin: 10px 0;
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .event-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: white;
+      transition: transform 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .event-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .event-title {
+      padding: 15px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      background-color: #fafafa;
+    }
+
+    footer {
+      background-color: #202020;
+      color: #eee;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer img {
+      height: 24px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    footer img:hover {
+      transform: scale(1.2);
+      filter: brightness(1.2);
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">HotPlate Bakers</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="events.html">Events</a>
+      <a href="birthdays.html">Birthdays</a>
+      <a href="about_us.html">About Us</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="weddings.html">Weddings</a>
+    <a href="events.html">Events</a>
+    <a href="birthdays.html">Birthdays</a>
+    <a href="about_us.html">About Us</a>
+  </div>
+
+  <!-- Event Gallery -->
+  <section class="gallery">
+    <div class="event-card"><img src="ws/ev1.jpg" alt="Elegant Garden Setup"><div class="event-title">Elegant Garden Setup</div></div>
+    <div class="event-card"><img src="ws/ev2.jpg" alt="Rustic Boho Vibes"><div class="event-title">Rustic Boho Vibes</div></div>
+    <div class="event-card"><img src="ws/ev3.jpg" alt="Luxury Gold Theme"><div class="event-title">Luxury Gold Theme</div></div>
+    <div class="event-card"><img src="ws/ev4.jpg" alt="Neon Night Party"><div class="event-title">Neon Night Party</div></div>
+    <div class="event-card"><img src="ws/ev5.jpg" alt="Classic Tent Decor"><div class="event-title">Classic Tent Decor</div></div>
+    <div class="event-card"><img src="ws/ev7.jpg" alt="Sunset Ceremony"><div class="event-title">Sunset Ceremony</div></div>
+    <div class="event-card"><img src="ws/ev8.jpg" alt="Tropical Chill Spot"><div class="event-title">Tropical Chill Spot</div></div>
+    <div class="event-card"><img src="ws/ev9.jpg" alt="Cozy Lounge Decor"><div class="event-title">Cozy Lounge Decor</div></div>
+    <div class="event-card"><img src="ws/ev10.jpg" alt="Outdoor Stage Setup"><div class="event-title">Outdoor Stage Setup</div></div>
+    <div class="event-card"><img src="ws/ev11.jpg" alt="Cultural Fusion Decor"><div class="event-title">Cultural Fusion Decor</div></div>
+    <div class="event-card"><img src="ws/ev12.jpg" alt="Balloon Wonderland"><div class="event-title">Luxury Lounge Setup</div></div>
+    <div class="event-card"><img src="ws/ev13.jpg" alt="Boho Picnic Setting"><div class="event-title">Boho Picnic Setting</div></div>
+    <div class="event-card"><img src="images/single1.jpg" alt="Romantic Dinner Set"><div class="event-title">Meat on skewers</div></div>
+    <div class="event-card"><img src="images/single2.jpg" alt="Pastel Garden Tables"><div class="event-title">Pastel Garden Tables</div></div>
+    <div class="event-card"><img src="images/single8.jpg" alt="Summer Breeze Setup"><div class="event-title">Summer Breeze Setup</div></div>
+    <div class="event-card"><img src="images/traditional_event.jpg" alt="Cultural Celebration Decor"><div class="event-title">Cultural Celebration Decor</div></div>
+    <div class="event-card"><img src="images/single6.jpg" alt="Minimal White Table"><div class="event-title">Minimal red Table</div></div>
+    <div class="event-card"><img src="images/event13.jpg" alt="Evening Glam Tables"><div class="event-title">Evening Glam Tables</div></div>
+    <div class="event-card"><img src="images/Gold.jpg" alt="Golden Hour Party"><div class="event-title">Golden Hour Party</div></div>
+    <div class="event-card"><img src="images/event.jpg" alt="Pink Floral Bliss"><div class="event-title">Blue Floral Bliss</div></div>
+    <div class="event-card"><img src="images/Pizza.jpg" alt="Pizza Party Mood"><div class="event-title">Pizza Party Mood</div></div>
+    <div class="event-card"><img src="images/Dema.jpg" alt="Bohemian Lounge Decor"><div class="event-title">Bohemian Lounge Decor</div></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>HotPlate Bakers & Caterers — Every Event, A Sweet Memory 🎉</p>
+    <h4>Stay Connected</h4>
+    <a href="https://www.facebook.com/share/1DMbrAYyYL/" target="_blank">
+      <img src="images/fb.png" alt="Facebook Icon" />
+    </a>
+    <p>Or you could reach us through our contacts:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li><strong>Nelly:</strong> 0724853269</li>
+    </ul>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+        menu.style.flexDirection = 'column';
+      }
+    }
+  </script>
+
+</body>
+</html>

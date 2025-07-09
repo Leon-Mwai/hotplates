@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HotPlate Bakers and Caterers</title>
+  <link rel="icon" type="image/png" href="images/single8.jpg" />
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #ffcccb;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6f61;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow-container img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    /* About */
+    .about-section {
+      padding: 50px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .about-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #7f8c8d;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    /* CTA Button */
+    .btn-contact {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff6f61;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: #d4574f;
+    }
+
+    /* Services */
+    .services-section {
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .service-card {
+      display: inline-block;
+      width: 30%;
+      margin: 10px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #7f8c8d;
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        width: 90%;
+        margin: 15px auto;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2c3e50;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .footer-social img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-social a {
+      color: #ff6f61;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-social a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">HotPlate 🍽️</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="events.html">Events</a>
+      <a href="birthdays.html">Birthdays</a>
+      <a href="about_us.html">About Us</a>
+    </div>
+  </nav>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <img src="images/background.jpg" alt="Buffet Display" class="active" />
+    <img src="images/us4.jpg" alt="Team Cooking" />
+    <img src="images/event11.jpg" alt="Decorated Event Setup" />
+  </div>
+
+  <!-- About -->
+  <div class="about-section">
+    <h1>About Us</h1>
+    <p>
+      At HotPlate Events, we are dedicated to offering you exemplary services,
+      making every event a memorable one. Our team of highly skilled
+      professionals ensures that we provide the best in event catering,
+      offering mouth-watering delicacies and world-class customer service.
+    </p>
+    <a href="tel:+254724853269" class="btn-contact">Call to Book 📞</a>
+  </div>
+
+  <!-- Services -->
+  <div class="services-section">
+    <h2>Our Services</h2>
+    <div class="service-card">
+      <img src="images/birthday2.jpg" alt="Birthday Cakes" />
+      <p>Custom birthday cakes that hit the sweet spot 🎂</p>
+    </div>
+    <div class="service-card">
+      <img src="images/wedding1.jpg" alt="Wedding Cakes" />
+      <p>Wedding cakes made to match your dream day 💍</p>
+    </div>
+    <div class="service-card">
+      <img src="images/event5.jpg" alt="Catering Services" />
+      <p>Elite catering for all occasions 🍲</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-social">
+      <img src="images/fb.png" alt="Facebook" />
+      <a href="https://www.facebook.com/share/1DMbrAYyYL/" target="_blank">Follow us on Facebook</a>
+    </div>
+    <p>Contact: Nelly - 0724853269</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    // Slideshow logic
+    const images = document.querySelectorAll(".slideshow-container img");
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 4000);
+  </script>
+</body>
+
+</html>

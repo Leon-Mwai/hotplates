@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1514986888952-8cd320577b68?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29va2luZ3xlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #5D5C61;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      color: #FF6F61;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #ffd6d6;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .main-container {
+      margin-top: 100px;
+      padding: 50px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .main-container h1 {
+      font-size: 2.5rem;
+      color: #FF6F61;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #FF6F61;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #D4574F;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 30px;
+      }
+
+      .main-container h1 {
+        font-size: 2rem;
+      }
+
+      .about-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html"><b>HotPlate</b></a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="weddings.html">Weddings</a>
+      <a href="events.html">Events</a>
+      <a href="birthdays.html">Birthdays</a>
+      <a href="about_us.html">About Us</a>
+    </div>
+  </nav>
+
+  <!-- About Us Content -->
+  <div class="main-container">
+    <h1>About Us</h1>
+    <p class="about-text">
+      At <strong>HotPlate Bakers and Caterers</strong>, we’re all about turning your events into unforgettable memories. Whether it’s a wedding, birthday, or corporate function — we serve up more than just food, we serve experiences. <br><br>
+      Our pro team is always pushing culinary limits to bring your dream events to life with delicious creativity, top-tier service, and love in every bite. We evolve with trends, stay fresh, and make sure you and your guests leave smiling.
+    </p>
+    <a href="index.html" class="btn-back">← Back to Home</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
